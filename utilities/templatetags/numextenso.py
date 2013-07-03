@@ -1,9 +1,9 @@
 # coding: utf-8
-
 # Autor: Fabiano Weimar dos Santos (xiru)
 # Correcao em 20080407: Gustavo Henrique Cervi (100:"cento") => (1:"cento')
+from django import template
 
-import sys
+register = template.Library()
 
 ext = [
     {
@@ -51,7 +51,6 @@ def cent(s, grand):
             ret += ext[1][int(s[1])]
             if s[2] != '0':
                 ret += ' e ' + ext[0][int(s[2])]
-
     return ret + (isinstance(und[grand], type(())) and (int(s) > 1 and und[grand][1] or und[grand][0]) or und[grand])
 
 
@@ -68,8 +67,10 @@ def extenso(n):
     return ' e '.join([r for r in ret if r])
 
 
-def numero_extenso(n, unidade='reais'):
+@register.filter
+def numero_extenso(n, unidade=''):
     UNIDADE_NAMES = {
+        '': {'plural': ('', ''), 'singular': ('', '')},
         'reais': {'plural': ('reais', 'centavos'), 'singular': ('real', 'centavo')},
         'ha': {'plural': ('hectares', 'ares'), 'singular': ('hectar', 'ar')},
     }
@@ -85,26 +86,3 @@ def numero_extenso(n, unidade='reais'):
             dec_plural and 'plural' or 'singular'][1]
         ret += ' e %s %s' % (extenso(dec), dec_sufixo)
     return unicode(ret, 'utf-8')
-
-
-if __name__ == '__main__':
-
-    if len(sys.argv) >= 3:
-        n = sys.argv[1]
-        e = numero_extenso(n, sys.argv[2])
-        print n
-        print e
-
-    elif len(sys.argv) == 2:
-        n = sys.argv[1]
-        e = numero_extenso(n)
-        print n
-        print e
-
-    else:
-        # testes
-        for num in range(100, 300):
-            for d in range(0, 100):
-                n = '%s.%s' % (num, d)
-                print n
-                print numero_extenso(n)
