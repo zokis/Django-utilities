@@ -19,6 +19,12 @@ Vários utilitários para o Django
   * _GenericRelationsForm_ (ModelForm para Gerneric Relations)
 * FormFields
   * _BRPhoneNumberField_ (FormField para telefone BR)
+* TemplateTags
+  * _float_format_br_ (Retorna número formatado com ',' para casas decimais (duas por padrão) e com '.' para cada 'passo decimal')
+  * _integer_format_br_ (Retorna número formatado com '.' para cada 'passo decimal' e sem casas Decimais)
+  * _monetary_format_br_ (Retorna número formatado com ',' para casas decimais (duas casas) e com '.' para cada 'passo decimal')
+  * _numero_extenso_ (Retorna número escrito por extenso)
+  * _ordering_link_ (Retorna link para ordenação por colunas)
 * _autodiscover_ (Registra Todos os Modelos no Admin)
 * _password_generator_ (Retorna um password randômico)
 * _get_paginator_context_ (Devolde Dicionário com todos os objetos necessários para Paginação (object_list, is_paginated, page_obj, paginator))
