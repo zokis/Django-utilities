@@ -6,14 +6,14 @@ CHARS_CHOICES_L = 'GZXCVB789yuiophjknmYUIPHJKLNM&'
 CHARS_CHOICES = CHARS_CHOICES_R + CHARS_CHOICES_L
 
 
-def password_generator(passwordLength=12):
+def password_generator(password_length=12):
     alternate_hands = bool(getrandbits(1))
     password = []
     if not alternate_hands:
-        for i in range(passwordLength):
+        for i in range(password_length):
             password += choice(CHARS_CHOICES)
     else:
-        for i in range(passwordLength):
+        for i in range(password_length):
             if i % 2 == 0:
                 password.append(choice(CHARS_CHOICES_L))
             else:
