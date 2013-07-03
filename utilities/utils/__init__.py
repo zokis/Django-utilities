@@ -1,5 +1,6 @@
 # coding: utf-8
 from django.conf import settings
+from django.core.serializers.json import DjangoJSONEncoder
 
 
 from datetime import date
@@ -36,3 +37,18 @@ def converte_unicode(v):
             except UnicodeDecodeError:
                 pass
     return v
+
+
+def instance_to_dict(instance, fields=None, exclude=None):
+    fields_set = set(field.name for field in instance._meta.fields)
+    if fields:
+        fields_set.intersection_update(fields)
+    if exclude:
+        fields_set.difference_update(exclude)
+    return dict((field, instance.serializable_value(field)) for field in fields_set)
+
+
+def instance_to_json(instance, fields=None, exclude=None, indent=1):
+    encoder = DjangoJSONEncoder(
+        encoding='utf-8', ensure_ascii=False, sort_keys=False, indent=indent)
+    return encoder.encode(instance_to_dict(instance, fields=fields, exclude=exclude))
