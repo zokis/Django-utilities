@@ -6,7 +6,7 @@ register = template.Library()
 @register.simple_tag(takes_context=True)
 def ordering_link(context, field):
     request = context.get('request', None)
-    if not request:
+    if request is None:
         return ''
 
     sort_get = request.GET.get('sort', '')
