@@ -28,9 +28,9 @@ class InstanceJsonResponse(HttpResponse):
 
 class JsonResponse(HttpResponse):
 
-    def __init__(self, dic):
+    def __init__(self, obj):
         encoder = DjangoJSONEncoder(
             encoding='utf-8', ensure_ascii=False, sort_keys=False, indent=1)
         super(JsonResponse, self).__init__(
-            encoder.encode(dic),
+            encoder.encode(obj),
             content_type='application/json')
