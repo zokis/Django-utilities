@@ -5,13 +5,12 @@ Vários utilitários para o Django
 
 * Widgets:
   * _TelefoneWidget_ (Widget de Telefone)
-  * HTML 5
-    * _EmailInput_
-    * _NumberInput_
-    * _TelephoneInput_
-    * _DateInput_
-    * _DateTimeInput_
-    * _TimeInput_
+  * _EmailInput_ (HTML 5)
+  * _NumberInput_ (HTML 5)
+  * _TelephoneInput_ (HTML 5)
+  * _DateInput_ (HTML 5)
+  * _DateTimeInput_ (HTML 5)
+  * _TimeInput_ (HTML 5)
 * HTTP
   * HttpResponseNotAuthorized (Response 401)
   * InstanceJsonResponse (Response json de uma instância)
