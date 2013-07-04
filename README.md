@@ -23,7 +23,7 @@ Vários utilitários para o Django
   * InstanceJsonResponse (Response json de uma instância)
   * JsonResponse (Response Json de um objeto)
 * Managers
-  * _BaseManager_ (_get_or_none_, _get_or_404_)
+  * _BaseManager_ ( _get_or_none_ , _get_or_404_ )
 * Views
   * _SearchFormListView_ (View Genérica para listagem com Filtro)
 * Models
