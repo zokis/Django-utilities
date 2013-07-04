@@ -1,21 +1,21 @@
 # coding: utf-8
-from django.conf import settings
 from django.core.serializers.json import DjangoJSONEncoder
-from django.contrib.sites.models import Site
 from django.http import HttpResponse
 
 from utilities.utils import instance_to_json
 
 
-REALM = settings.get('SOCIAL_API_REALM', Site.objects.get_current().name)
-
-
 class HttpResponseNotAuthorized(HttpResponse):
     status_code = 401
 
-    def __init__(self, redirect_to):
+    def __init__(self, username, password):
         super(HttpResponse, self).__init__()
-        self.update('WWW-Authenticate', ('Basic realm="%s"' % REALM))
+        self['WWW-Authenticate'] = (
+            'Basic realm="%s"' %
+                (
+                    "%s:%s" % (username, password)
+                ).encode('base64', 'strict')
+            )
 
 
 class InstanceJsonResponse(HttpResponse):
