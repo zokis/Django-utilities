@@ -5,6 +5,22 @@ Vários utilitários para o Django
 
 * Widgets:
   * _TelefoneWidget_ (Widget de Telefone)
+  * HTML 5
+    * _EmailInput_
+    * _NumberInput_
+    * _TelephoneInput_
+    * _DateInput_
+    * _DateTimeInput_
+    * _TimeInput_
+* HTTP
+  * HttpResponseNotAuthorized (Response 401)
+  * InstanceJsonResponse (Response json de uma instância)
+  * JsonResponse (Response Json de um objeto)
+* Managers
+  * _BaseManager_
+    * _get_or_none_
+    * _get_or_404_
+
 * Views
   * _SearchFormListView_ (View Genérica para listagem com Filtro)
 * Models
@@ -25,6 +41,9 @@ Vários utilitários para o Django
   * _monetary_format_br_ (Retorna número formatado com ',' para casas decimais (duas casas) e com '.' para cada 'passo decimal')
   * _numero_extenso_ (Retorna número escrito por extenso)
   * _ordering_link_ (Retorna link para ordenação por colunas)
+  * _markdown_ (Retorna HTML de um Markdown)
+  * _instance_to_json_filter_ (Retorna um json apartir de uma instância, aceita parâmetro exclude)
+  * _json_dumps_ (Retorna json.dumps para um objeto)
 * _autodiscover_ (Registra Todos os Modelos no Admin)
 * _password_generator_ (Retorna um password randômico)
 * _get_paginator_context_ (Devolde Dicionário com todos os objetos necessários para Paginação (object_list, is_paginated, page_obj, paginator))
