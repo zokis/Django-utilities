@@ -3,7 +3,7 @@ from django import template
 
 from utilies.utils import instance_to_json
 
-import json
+from json import dumps
 
 register = template.Library()
 
@@ -12,4 +12,4 @@ def instance_to_json_filter(instance, *args):
     return instance_to_json(instance, exclude=args)
 
 register.filter('instance_to_json', instance_to_json_filter)
-register.filter('json_dumps', json.dumps)
+register.filter('json_dumps', dumps)
