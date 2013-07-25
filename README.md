@@ -5,21 +5,25 @@ Vários utilitários para o Django
 
 * Widgets:
   * _TelefoneWidget_ (Widget de Telefone)
-  * _EmailInput_ (HTML 5)
-  * _NumberInput_ (HTML 5)
-  * _TelephoneInput_ (HTML 5)
+  * _ColorInput_ (HTML 5)
   * _DateInput_ (HTML 5)
-  * _DateTimeInput_ (HTML 5)
+  * _DatetimeInput_ (HTML 5)
+  * _DatetimeLocalInput_ (HTML 5)
+  * _EmailInput_ (HTML 5)
+  * _MonthInput_ (HTML 5)
+  * _NumberInput_ (HTML 5)
+  * _RangeInput_ (HTML 5)
+  * _SearchInput_ (HTML 5)
+  * _TelInput_ (HTML 5)
   * _TimeInput_ (HTML 5)
+  * _URLInput_ (HTML 5)
+  * _WeekInput_ (HTML 5)
 * HTTP
   * HttpResponseNotAuthorized (Response 401)
   * InstanceJsonResponse (Response json de uma instância)
   * JsonResponse (Response Json de um objeto)
 * Managers
-  * _BaseManager_
-    * _get_or_none_
-    * _get_or_404_
-
+  * _BaseManager_ ( _get_or_none_ , _get_or_404_ )
 * Views
   * _SearchFormListView_ (View Genérica para listagem com Filtro)
 * Models
